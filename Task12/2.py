@@ -1,11 +1,11 @@
-s = '7'* 40+'4'*50+ '9'*40
-while "49" in s or "97" in s or "47" in s:
-    if "47" in s:
-        s=s.replace("47","74",1)
-    elif "97" in s:
-        s = s.replace("97","79",1)
+s ='0' +'2'* 6 + '4'*10 +'6'*12
+while "02" in s or "04" in s or "06" in s:
+    if "02" in s:
+        s=s.replace("02","620",1)
+    elif "04" in s:
+        s = s.replace("04","4206",1)
     else:
-        s = s.replace("49", "94",1)
+        s = s.replace("06", "402",1)
     print(s)
 print(s)
-print(s[25],s[71],s[105])
+print(s.count('2'),s.count('4'),s.count('6'))
