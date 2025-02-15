@@ -1,11 +1,19 @@
-s ='0' +'2'* 6 + '4'*10 +'6'*12
-while "02" in s or "04" in s or "06" in s:
-    if "02" in s:
-        s=s.replace("02","620",1)
-    elif "04" in s:
-        s = s.replace("04","4206",1)
-    else:
-        s = s.replace("06", "402",1)
-    print(s)
-print(s)
-print(s.count('2'),s.count('4'),s.count('6'))
+from itertools import product
+
+
+def get_code_index(target):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    length = len(target)
+    index = 0
+
+    for l in range(1, length):
+        index += len(alphabet) ** l
+
+    for i, char in enumerate(target):
+        pos = alphabet.index(char)
+        index += pos * (len(alphabet) ** (length - i - 1))
+
+    return index + 1
+
+
+print(get_code_index("DEFFED"))
