@@ -1,17 +1,15 @@
-f = open("26.txt")
-a = f.readline()
-n,m =a.split()
-m=int(m)
-b = [int(i.strip()) for i in f]
-b.sort()
-t=0
-for i in range(len(b)):
-    if b[i]>=210 and b[i]<=220:
-        m-=b[i]
-        t+=1
-print(m,t)
-for i in range(len(b)):
-    if m>0:
-        m-=b[i]
-        t+=1
-print(m,t)
+F = [0]*10009
+F[0]=0
+F[1]=1
+F[2]=2
+F[3]=3
+F[4]=4
+F[5]=5
+for i in range(6,10000):
+    if i%8==0:
+        F[i]=i+F[i//2-3]
+for i in range(9999-3,5,-1):
+    if i%8!=0:
+        F[i]=i+F[i+4]
+print(F)
+print(max(F))
