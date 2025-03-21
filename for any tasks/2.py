@@ -1,23 +1,12 @@
-f=open("24.txt")
-r=f.readlines()
-n=int(r[0])
-A=[]
-B=[]
-for i in range(1,n):
-    st=r[i].split()
-    if st[0]=="A":
-        A.append(int(st[1]))
-    else:
-        B.append(int(st[1]))
-A.sort(reverse = True)
-B.sort(reverse = True)
+f = open("17_1.txt", encoding="utf-8-sig")
+a = [int(i.strip()) for i in f]
+f.close()
 c=0
-sm=0
-for i in range(len(B)):
-    for j in range(len(A)):
-        if abs(B[i]-A[j])<=15:
-            c+=1
-            sm+=B[i]+A[j]
-            del A[j]
-            break
-print(c,sm)
+mx=0
+for i in range(len(a)-1):
+    if (abs(a[i])%4==0 or abs(a[i+1])%4==0) and (abs(a[i]+a[i+1])%7==0):
+        c+=1
+        print(a[i],a[i+1])
+        if a[i]+a[i+1]>mx:
+            mx=a[i]+a[i+1]
+print(c,mx)
