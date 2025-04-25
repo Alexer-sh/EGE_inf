@@ -1,8 +1,9 @@
 
 import turtle as t
+t.screensize(5000,5000)
 t.left(90)
 t.speed(1000)
-k=10
+k=50
 t.down()
 for i in range(10):
     t.forward(22*k)

@@ -1,8 +1,9 @@
 #Магическая программа на адекватном языке, а не дичь на кумире, ура!
 import turtle as t
+t.screensize(5000,5000)
 t.left(90)
 t.speed(1000)
-k=10
+k=50
 t.down()
 for i in range(3):
     t.forward(7*k)
